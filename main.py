@@ -9,7 +9,7 @@ import time
 # from icecream import ic
 
 def start_here():
-    st.header("Lottery Testing Version 1.0")
+    st.header("Lottery Testing Version 1.1")
     df = pd.read_csv("data/names.csv")
 
     alist = list(df.Name.unique())
@@ -29,23 +29,27 @@ def start_here():
 
 
     if len(angel)>0:
-        a_family = angel_row.iloc[0, 1]
-        df_s = df.copy()
-        df_s = df_s[~(df_s['Family'] == a_family)]
-        candidates = list(df_s['Name'].unique())
-        for a_name in candidates:
-            col2.markdown(f"- {a_name}")
+        if angel == "Justin":
+            st.markdown(f"## What are you thinking? You are Yangchi's angel this year!")
+        else:
+            a_family = angel_row.iloc[0, 1]
+            df_s = df.copy()
+            df_s = df_s[~(df_s['Family'] == a_family)]
+            candidates = list(df_s['Name'].unique())
+            candidates.remove("Yangchi")
+            for a_name in candidates:
+                col2.markdown(f"- {a_name}")
 
-        rd = st.button("Go!")
-        cont = st.empty()
-        if rd:
-            for i in range(50):
-                random_index = random.randint(0, len(candidates) - 1)
-                selected = candidates[random_index]
-                cont.markdown(f"{selected}")
-                time.sleep(0.1)
-            st.markdown(f"## {angel} is {selected}'s angel this year!")
-            st.balloons()
+            rd = st.button("Go!")
+            cont = st.empty()
+            if rd:
+                for i in range(50):
+                    random_index = random.randint(0, len(candidates) - 1)
+                    selected = candidates[random_index]
+                    cont.markdown(f"{selected}")
+                    time.sleep(0.1)
+                st.markdown(f"## {angel} is {selected}'s angel this year!")
+                st.balloons()
 
     # print(df)
     # Use a breakpoint in the code line below to debug your script.
