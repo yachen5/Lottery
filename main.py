@@ -9,7 +9,7 @@ import time
 # from icecream import ic
 
 def start_here():
-    st.header("Lottery Testing Version 0.2")
+    st.header("Lottery Testing Version 0.3")
     df = pd.read_csv("data/names.csv")
 
     alist = list(df.Name.unique())
