@@ -36,7 +36,10 @@ def start_here():
             df_s = df.copy()
             df_s = df_s[~(df_s['Family'] == a_family)]
             candidates = list(df_s['Name'].unique())
-            candidates.remove("Yangchi")
+            try:
+                candidates.remove("Yangchi")
+            except ValueError:
+                pass
             for a_name in candidates:
                 col2.markdown(f"- {a_name}")
 
