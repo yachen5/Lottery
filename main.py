@@ -9,7 +9,7 @@ import plotly_express as px
 
 base_id = st.secrets['base_id']
 table_name = st.secrets['table_name']
-api_key = st.secrests['api_key']
+api_key = st.secrets['api_key']
 
 # a_table = at.Airtable(cf.base_id, cf.table_name, cf.api_key)
 a_table = at.Airtable(base_id, table_name, api_key)
