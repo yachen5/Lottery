@@ -7,4 +7,5 @@ list of people is stored in airtable with columns
   4. status (1/0)
   5. enter_date
   6. picked
+
 app is hosted on the streamlit cloud.
