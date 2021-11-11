@@ -1,5 +1,5 @@
 # Lottery
-created a small streamlit tool for a group of friends to play the white elephant game.
+created a small streamlit app for a group of friends to play the white elephant game.
 list of people is stored in airtable with columns
   1. name
   2. last name (also used for fool proof)
