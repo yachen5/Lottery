@@ -23,7 +23,7 @@ def show_stats(df):
     fig = px.pie(df, names='status', values='name')
     st.plotly_chart(fig)
 
-    st.markdown("- Timeline")
+    st.markdown("- When did they play this game?")
     df_time = df_time.dropna(subset=['enter_date'])
     fig2 = px.bar(df_time, x='enter_date', y='status', color='name')
     st.plotly_chart(fig2)
